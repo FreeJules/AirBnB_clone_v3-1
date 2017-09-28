@@ -217,6 +217,8 @@ github repo
 * Kimberly Wong, [kjowong](https://github.com/kjowong) | [@kjowong](https://twitter.com/kjowong) | [kjowong@gmail.com](kjowong@gmail.com)
 * Carrie Ybay, [hicarrie](https://github.com/hicarrie) | [@hicarrie_](https://twitter.com/hicarrie_)
 * Jared Heck, [jarehec](https://github.com/jarehec) | [@jarehec](https://twitter.com/jarehec)
+* Julija Lee, [FreeJules](https://github.com/FreeJules) | [@LeeJulija](https://twitter.com/LeeJulija)
+* Chris Novelli, [cnov20](https://github.com/cnov20) | [cnov20](https://twitter.com/c_nov20)
 
 ## License
 
