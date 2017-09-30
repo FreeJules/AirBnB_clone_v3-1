@@ -1,7 +1,7 @@
 $(document).ready(function () {
   let amensObj = {}
   let amensStr = '';
-  $("input:checkbox").change(function() {
+  $('input:checkbox').change(function() {
     if($(this).is(':checked')) {
       id = $(this).attr('data-id');
       name = $(this).attr('data-name');
