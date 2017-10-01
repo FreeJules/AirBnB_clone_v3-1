@@ -22,8 +22,6 @@ def teardown_db(exception):
     """
     storage.close()
 
-# Route for page with dynamically generated content
-
 
 @app.route('/3-hbnb')
 def hbnb_filters(the_id=None):
