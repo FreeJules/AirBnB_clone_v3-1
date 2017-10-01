@@ -26,10 +26,13 @@ $(document).ready(function () {
     }
   });
 
-  // Post places dynamically to index page
+  // Post places dynamically with a click
   $('button').on('click', function () {
-  // old code
-    let places = $('.places h1');
+    // empty <div class='places'> and add <h1>Places</h1> again
+    $('.places').empty();
+    $('<h1>Places</h1>').appendTo('.places');
+
+    // defining data to be passed to request
     let reqData = {};
     reqData['amenities'] = Object.keys(amensObj);
 
@@ -63,7 +66,8 @@ $(document).ready(function () {
           html += '<div class="user"> </div> <div class="description">' +
             place.description + '</div> </article>';
 
-          $(html).insertAfter(places);
+          // append all articles to .places tag
+          $(html).appendTo('.places');
         });
       },
       error: function (xhr, textStatus, error) {
@@ -72,6 +76,5 @@ $(document).ready(function () {
         console.log(error);
       }
     });
-  // end of old code
   });
 });
