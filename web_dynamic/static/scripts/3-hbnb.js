@@ -26,7 +26,6 @@ $(document).ready(function () {
     }
   });
 
-
   // Post places dynamically to index page
 
   let places = $('.places h1');
@@ -35,10 +34,16 @@ $(document).ready(function () {
     type: 'POST',
     url: 'http://0.0.0.0:5001/api/v1/places_search/',
     datatype: 'json',
-    data: JSON,
+    data: JSON.stringify(places),
     contentType: 'application/json',
-    success: function (places) {
-      console.log(places);
+    success: function (data) {
+      $(data).each(function(index, place) {
+        console.log(place);
+        places.append('<article>');
+	places.append('<div class="title"> <h2>' + place.name + '</h2>');
+	places.append('<div class="price_by_night">' + place.price_by_nigh + '</div></div>');
+	places.append('</article>');
+      });
     },
     error: function (xhr, textStatus, error) {
       console.log(xhr.statusText);
