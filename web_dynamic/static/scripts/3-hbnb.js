@@ -37,31 +37,26 @@ $(document).ready(function () {
     data: JSON.stringify(places),
     contentType: 'application/json',
     success: function (data) {
-      $(data).each(function(index, place) {
+      $(data).each(function (index, place) {
         console.log(place);
-	// Opening article tag
-	let html = '';
+        // Create empty html string to be added to
+        let html = '';
 
-	// Place - name/title and price portion
-	html += '<article> <div class="title"> <h2>' + place.name + '</h2>';
-	html += '<div class="price_by_night"> $' + place.price_by_night + '</div></div>';
+        // Place - name/title and price portion
+        html += '<article> <div class="title"> <h2>' + place.name + '</h2>';
+        html += '<div class="price_by_night"> $' + place.price_by_night + '</div></div>';
 
-	// Place - information portion (max guests and number of rooms)
-	html += '<div class="information"> <div class="max_guest"><i class="fa fa-users fa-3x"\
-                  aria-hidden="true"></i><br>' + place.max_guest + ' Guests' + '</div>';
+        // Place - information portion (max guests and number of rooms)
+        html += '<div class="information"> <div class="max_guest"><i class="fa fa-users fa-3x" aria-hidden="true"></i><br>' + place.max_guest + ' Guests </div>';
 
-	html += '<div class="number_rooms"> <i class="fa fa-bed fa-3x" aria-hidden="true"></i><br>'
-		      + place.number_rooms + ' Bedrooms' + '</div>';
+        html += '<div class="number_rooms"> <i class="fa fa-bed fa-3x" aria-hidden="true"></i><br>' + place.number_rooms + ' Bedrooms' + '</div>';
 
-	html += '<div class="number_bathrooms">\
-                      <i class="fa fa-bath fa-3x" aria-hidden="true"></i><br>'
-		      + place.number_bathrooms + ' Bathrooms' + '</div></div>';
+        html += '<div class="number_bathrooms"> <i class="fa fa-bath fa-3x" aria-hidden="true"></i><br>' + place.number_bathrooms + ' Bathrooms' + '</div></div>';
 
-	// User - Owner and description portion
-	html += '<div class="user"> </div> <div class="description">'
-		      + place.description +  '</div> </article>';
+        // User - Owner and description portion
+        html += '<div class="user"> </div> <div class="description">' + place.description + '</div> </article>';
 
-	$(html).insertAfter(places);
+        $(html).insertAfter(places);
       });
     },
     error: function (xhr, textStatus, error) {
