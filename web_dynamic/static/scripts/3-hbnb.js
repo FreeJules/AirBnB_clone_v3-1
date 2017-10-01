@@ -25,7 +25,7 @@ $(document).ready(function () {
       $('DIV#api_status').removeClass('available');
     }
   });
-  /* fetching places */
+  /* fetching places for .places class*/
   $.ajax({
     type: 'POST',
     url: 'http://0.0.0.0:5001/api/v1/places_search/',
