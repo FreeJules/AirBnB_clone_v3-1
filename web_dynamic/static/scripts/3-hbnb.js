@@ -38,7 +38,7 @@ $(document).ready(function () {
     contentType: 'application/json',
     success: function (data) {
       $(data).each(function (index, place) {
-        console.log(place);
+//        console.log(place);
         // Create empty html string to be added to
         let html = '';
 
