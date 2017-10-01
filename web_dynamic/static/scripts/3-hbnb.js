@@ -37,24 +37,37 @@ $(document).ready(function () {
       $.each(data, function(index, place) {
         $('<article id="' + place.id + '"></article>').appendTo('.places');
 	let plIdStr = '.places #' + place.id
-	$('<div><h2></h2><div></div></div>').appendTo(plIdStr);
-	$(plIdStr + ' div').addClass('title');
-	console.log(place.name);
-	$(plIdStr + ' .title h2').text(place.name);
-	$(plIdStr + ' .title div').addClass('price_by_night');
-	console.log(place.price_by_night);
-	$(plIdStr + ' .title .price_by_night').text(place.price_by_night);
-/*
-	$('<article id="' + place.id + '"></article>').appendTo('.places');
-	let plIdStr = '.places #' + place.id
-	$('<div><h2></h2><div></div></div>').appendTo(plIdStr);
-	$(plIdStr + ' div').addClass('title');
-	console.log(place.name);
-	$(plIdStr + ' .title h2').text(place.name);
-	$(plIdStr + ' div div').addClass('price_by_night');
-	console.log(place.price_by_night);
-	$('.price_by_night').text(place.price_by_night);
-*/
+        $('<div class="title"></div>').appendTo(plIdStr);
+	$('<div class="information"></div>').appendTo(plIdStr);
+	$('<div class="user"></div>').appendTo(plIdStr);
+	$('<div class="description"></div>').appendTo(plIdStr);
+	/*
+	adding name and price
+	class='title' and class='price_by_night'
+	*/
+	$(plIdStr + ' .title').append('<h2>' + place.name + '</h2>');
+	$(plIdStr + ' .title').append('<div class="price_by_night">$' + place.price_by_night + '</div>');
+        /*
+        getting second div with class+'information'
+        classes: 'max_guest', 'number_bathrooms', 'nhumber_rooms'
+        */
+        $(plIdStr + ' .information').append('<div class="max_guest"></div>');
+	$(plIdStr + ' .information .max_guest').
+	      append('<i class="fa fa-users fa-3x" aria-hidden="true"></i>');
+	$(plIdStr + ' .information .max_guest').append('<br />');
+        $(plIdStr + ' .information .max_guest').append(place.max_guest + ' Guests');
+
+	$(plIdStr + ' .information').append('<div class="number_rooms"></div>');
+        $(plIdStr + ' .information .number_rooms').
+              append('<i class="fa fa-bed fa-3x" aria-hidden="true"></i>');
+        $(plIdStr + ' .information .number_rooms').append('<br />');
+        $(plIdStr + ' .information .number_rooms').append(place.number_rooms + ' Rooms');
+
+        $(plIdStr + ' .information').append('<div class="number_bathrooms"></div>');
+        $(plIdStr + ' .information .number_bathrooms').
+              append('<i class="fa fa-bath fa-3x" aria-hidden="true"></i>');
+        $(plIdStr + ' .information .number_bathrooms').append('<br />');
+        $(plIdStr + ' .information .number_bathrooms').append(place.number_bathrooms + ' Bathrooms');
       });
     },
     error: function(data) {
